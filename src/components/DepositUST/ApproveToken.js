@@ -90,6 +90,17 @@ function ApproveToken(props) {
 // //           console.log(value)
 // //       }
     // }
+    const [input, setInput] = useState(0)
+
+    function changeInput(e)  {
+        if(e.target.value == +e.target.value){
+            setInput = e.target.value
+        }
+    }
+
+    function setMax() {
+        setInput(props.balance)
+    }
 
     return (
     <div>
@@ -103,8 +114,8 @@ function ApproveToken(props) {
             <div className="pb-8 ">
                 {!props.isApproved?<div className=" overflow-hidden">
                     <div className=" dark:bg-dark-600 dark:border-0 bg-white absolute w-full h-18 z-40 bg-opacity-100 rounded backdrop-filter flex items-center justify-center">
-                        <button onClick={props.handleClick} type="button" className="focus:outline-none  bg-transparent text-center py-2  h-full w-full border rounded-md font-bold border-blue-500 text-blue-500">
-                            <div className="flex justify-between px-2 items-center">
+                        <button onClick={() => {}} type="button" className="focus:outline-none  bg-transparent text-center py-1  h-full w-full border rounded-md font-bold border-blue-500 text-blue-500">
+                            <div className="flex justify-between px-1 pl-2 items-center ">
                                 <div className="flex items-center">
                                     <div style={{ display: 'inline-block', maxWidth: '100%', overflow: 'hidden', position: 'relative', boxSizing: 'border-box', margin: 0 }}>
                                         <div style={{ boxSizing: 'border-box', display: 'block', maxWidth: '100%' }}>
@@ -114,8 +125,10 @@ function ApproveToken(props) {
                                     </div>
                                     <span className="dark:text-white text-black font-base ml-2">{props.name}</span>
                                 </div>
-                                <span> Approve</span>
-                                <div className="flex items-center invisible">
+                                <input className="bg-transparent" value={input} onChange={changeInput} />
+                                <button className="dark:bg-blue-400 bg-blue-400	 dark:text-white px-4 py-2 rounded " onClick={setMax} >MAX</button>
+                                {/* <span> Approve</span> */}
+                                {/* <div className="flex items-center invisible">
                                     <div style={{ display: 'inline-block', maxWidth: '100%', overflow: 'hidden', position: 'relative', boxSizing: 'border-box', margin: 0 }}>
                                         <div style={{ boxSizing: 'border-box', display: 'block', maxWidth: '100%' }}>
                                             <img alt aria-hidden="true" role="presentation" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style={{ maxWidth: '100%', display: 'block', margin: 0, border: 'none', padding: 0 }} />
@@ -123,7 +136,7 @@ function ApproveToken(props) {
                                         <img src={props.logo} decoding="async" style={{ visibility: 'inherit', position: 'absolute', inset: 0, boxSizing: 'border-box', padding: 0, border: 'none', margin: 'auto', display: 'block', width: 0, height: 0, minWidth: '100%', maxWidth: '100%', minHeight: '100%', maxHeight: '100%' }} srcSet={props.logo} />
                                     </div>
                                     <span className="text-black font-base ml-2">{props.name}</span>
-                                </div>
+                                </div> */}
                             </div>
                         </button>
                     </div>
