@@ -114,7 +114,7 @@ function ApproveToken(props) {
             <div className="pb-8 ">
                 {!props.isApproved?<div className=" overflow-hidden">
                     <div className=" dark:bg-dark-600 dark:border-0 bg-white absolute w-full h-18 z-40 bg-opacity-100 rounded backdrop-filter flex items-center justify-center">
-                        <button onClick={() => {}} type="button" className="focus:outline-none  bg-transparent text-center py-1  h-full w-full border rounded-md font-bold border-blue-500 text-blue-500">
+                        <button onClick={props.handleClick} type="button" className="focus:outline-none  bg-transparent text-center py-1  h-full w-full border rounded-md font-bold border-blue-500 text-blue-500">
                             <div className="flex justify-between px-1 pl-2 items-center ">
                                 <div className="flex items-center">
                                     <div style={{ display: 'inline-block', maxWidth: '100%', overflow: 'hidden', position: 'relative', boxSizing: 'border-box', margin: 0 }}>
